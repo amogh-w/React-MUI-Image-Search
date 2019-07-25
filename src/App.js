@@ -8,7 +8,7 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <Paper square={true} style={{ marginTop: "20px" }}>
+        <Paper square={true} style={{ marginTop: "20px", padding: "10px" }}>
           <Search />
         </Paper>
       </React.Fragment>
