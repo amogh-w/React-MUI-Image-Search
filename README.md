@@ -9,6 +9,7 @@ A Image Browser made in React.js with Material-UI and using Pixabay API.
 - [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html) - Get started with React here
 - [Material-UI](https://material-ui.com/) - React components for faster and easier web development
 - [Pixabay API](https://pixabay.com/api/docs/) - A RESTful interface for searching and retrieving free images and videos released under the Pixabay License.
+- [Traversy Media Tutorial](https://www.youtube.com/watch?v=dzOrUmK4Qyw) - Tutorial for this project.
 
 ## Available Scripts:
 
