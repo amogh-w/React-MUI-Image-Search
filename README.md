@@ -1,6 +1,6 @@
 # React MUI Image Search
 
-A Image Browser made in React.js with Material-UI and using Pixabay API.
+An Image Browser made in React.js with Material-UI and using Pixabay API.
 
 ![working](https://github.com/amogh-w/React-MUI-Image-Search/blob/master/media/working.gif)
 
