@@ -8,12 +8,14 @@ import {
   MenuItem,
   Button
 } from "@material-ui/core";
+import ImageResults from "./ImageResult";
 
 export default class Search extends Component {
   state = {
     searchText: "",
     amount: "",
     apiKey: "12785513-8372b6489e3de0dda8d71d823",
+    apiUrl: "https://pixabay.com/api/",
     images: []
   };
 
@@ -30,7 +32,18 @@ export default class Search extends Component {
   };
 
   onSearchButtonClick = () => {
-    console.log(this.state.searchText, this.state.amount);
+    fetch(
+      `${this.state.apiUrl}/?key=${this.state.apiKey}&q=${
+        this.state.searchText
+      }&image_type=photo&per_page=${this.state.amount}&safesearch=true`
+    )
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          images: data.hits
+        })
+      )
+      .catch(err => alert(err));
   };
 
   render() {
@@ -56,7 +69,7 @@ export default class Search extends Component {
               name="amount"
               value={this.state.amount}
               onChange={this.onAmountChange}
-              style={{ width: "50vw" }}
+              style={{ width: "30vw" }}
             >
               <MenuItem value={5}>Five</MenuItem>
               <MenuItem value={10}>Ten</MenuItem>
@@ -72,6 +85,12 @@ export default class Search extends Component {
             Search
           </Button>
         </Box>
+
+        <br />
+
+        {this.state.images.length > 0 ? (
+          <ImageResults images={this.state.images} />
+        ) : null}
       </React.Fragment>
     );
   }
